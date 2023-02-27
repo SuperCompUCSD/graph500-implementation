@@ -1,4 +1,4 @@
-# Graph500 Implentation
+# Graph500 Implementation
 
 this project is a much less cool and much slower version of the _blazingly-fast_ Rust implementation available here :D
 github.com/ritobanrc/graph500-rs/
