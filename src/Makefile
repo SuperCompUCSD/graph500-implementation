@@ -1,10 +1,9 @@
-# AOC 2022 template makefile
-EXE =  
-OBJS = 
-CC = gcc
+EXE = graph500
+OBJS = main.o core.o xorshift.o
+CC = mpicc
 DEBUG = -g
-WARN = -Wall -Wextra
-CFLAGS = -I. $(DEBUG) $(WARN)
+WARN = #-Wall -Wextra
+CFLAGS = -I. -O3 $(DEBUG) $(WARN)
 LIBS = 
 .PHONY: clean run
 
@@ -15,7 +14,7 @@ $(EXE) : $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS)
 
 run: $(EXE)
-	./$(EXE)
+	mpirun -np 1 ./$(EXE)
 
 clean:
 	rm -f $(EXE) $(OBJS)
