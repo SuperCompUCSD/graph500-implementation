@@ -23,10 +23,12 @@ int32_t main(){
 	int32_t numThreads = info->total_cores;
 
 	free(info);
+	xorshift32(10);
 
-	xorshift32_state* rand = sxorshift32(32);
+	for(int i = 0; i<10; i++){
+		printf("%d\n", xorshift32(0));
+	}
 
-	free(rand);
 	
 
 	// generate edge list
